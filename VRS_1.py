@@ -49,7 +49,7 @@ class Vehicle(ABC):
 class Car(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
-#Creating polymorphic method for Car
+#Creating polymorphic methods for Car
     def rent(self):
         return self.get_rent()
     
@@ -62,7 +62,7 @@ class Car(Vehicle):
 class Bike(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
-#Creating polymorphic method for Bike    
+#Creating polymorphic methods for Bike    
     def rent(self):
         return self.get_rent() * 0.25
     
@@ -75,7 +75,7 @@ class Bike(Vehicle):
 class Truck(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance):
         super().__init__(vhname, rent, retain, maintenance)
-#Creating polymorphic method for Truck     
+#Creating polymorphic methods for Truck     
     def rent(self):
         return self.get_rent() * 1.5
     
@@ -89,8 +89,7 @@ class Truck(Vehicle):
 class Customer:
     def __init__(self, cname, tag):
         self.__cname = cname
-        self.__tag = tag
-        
+        self.__tag = tag      
 #Creating the getters and setters for Customer data   
     def get_name(self):
         return self.__cname
@@ -118,13 +117,12 @@ class Payment:
     def __init__(self, rental, amount):
         self.rental = rental
         self.amount = amount
+#Function to calculate rental fees based on vehicle type.
     def process_payment():
         return f"Processing payment of {self.amount} for {self.get_vhname()}"
 
-
-
-Adwoaa_car = 
-print(Adwoaa_car.get_vhname()) 
-
+#Creating objects to test the system
+car = Car("Bugatti", 150, 50 ,12)
+bike = Bike("BMS", 90, 4, 2)
 
 
