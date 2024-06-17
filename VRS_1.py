@@ -49,7 +49,7 @@ class Vehicle(ABC):
 class Car(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
-#Creating polymorphic method for 
+#Creating polymorphic method for Car
     def rent(self):
         return self.get_rent()
     
@@ -62,7 +62,7 @@ class Car(Vehicle):
 class Bike(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
-        
+#Creating polymorphic method for Car    
     def rent(self):
         return self.get_rent() * 0.25
     
@@ -75,7 +75,7 @@ class Bike(Vehicle):
 class Truck(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance, days):
         super().__init__(vhname, rent, retain, maintenance, days)
-        
+#Creating polymorphic method for Car        
     def rent(self):
         return self.get_rent() * 1.5
     
