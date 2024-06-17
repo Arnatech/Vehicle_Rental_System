@@ -13,11 +13,11 @@ class Vehicle(ABC):
         pass
     
     @abstractmethod
-    def retain_vehicle(self):
+    def retain(self):
         pass
     
     @abstractmethod
-    def perform_maintenance(self):
+    def maintenance(self):
         pass
     
 #Creating the getter and setter methods for vehicle data
@@ -66,10 +66,10 @@ class Bike(Vehicle):
     def rent(self):
         return self.get_rent() * 0.25
     
-    def retain_vehicle(self):
+    def retain(self):
         return self.get_retain()
     
-    def perform_maintenance(self):
+    def maintenance(self):
         return self.get_maintenance()
         
 class Truck(Vehicle):
@@ -79,10 +79,10 @@ class Truck(Vehicle):
     def rent(self):
         return self.get_rent() * 1.5
     
-    def retain_vehicle(self):
+    def retain(self):
         return self.get_retain()
     
-    def perform_maintenance(self):
+    def maintenance(self):
         return self.get_maintenance
         
 class Customer:
@@ -92,16 +92,16 @@ class Customer:
         
 #Creating the getters and setters for Customer data   
     def get_name(self):
-        return self.__name
+        return self.__cname
 
     def set_name(self, name):
         self.__name = name
 
-    def get_customer_id(self):
-        return self.__customer_id
+    def get_tag(self):
+        return self.__tag
 
-    def set_customer_id(self, customer_id):
-        self.__customer_id = customer_id
+    def set_tag(self, tag):
+        self.__tag = tag
 
     
         
@@ -113,7 +113,7 @@ class Rental:
         self.days = days
 
     def calculate_rental_fee(self):
-        return self.vehicle.rent() * self.rental_period
+        return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintanence()) * self.rental_period
     
 # class Payment
 
