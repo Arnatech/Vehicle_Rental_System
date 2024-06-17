@@ -73,8 +73,8 @@ class Bike(Vehicle):
         return self.get_maintenance()
         
 class Truck(Vehicle):
-    def __init__(self, vhname, rent, retain, maintenance, days):
-        super().__init__(vhname, rent, retain, maintenance, days)
+    def __init__(self, vhname, rent, retain, maintenance):
+        super().__init__(vhname, rent, retain, maintenance)
 #Creating polymorphic method for Truck     
     def rent(self):
         return self.get_rent() * 1.5
@@ -114,7 +114,12 @@ class Rental:
     def calculate_rental_fee(self):
         return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintanence()) * self.days
     
-class Payment
+class Payment:
+    def __init__(self, rental, amount):
+        self.rental = rental
+        self.amount = amount
+    def process_payment():
+        return f"Processing payment of {self.amount} for {self.get_vhname()}"
 
 
 
