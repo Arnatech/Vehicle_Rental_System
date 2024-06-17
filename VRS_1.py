@@ -109,7 +109,7 @@ class Rental:
         self.customer = customer
         self.vehicle = vehicle
         self.days = days
-
+#Function to calculate rental fees based on vehicle type.
     def calculate_rental_fee(self):
         return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintanence()) * self.days
     
@@ -117,7 +117,7 @@ class Payment:
     def __init__(self, rental, amount):
         self.rental = rental
         self.amount = amount
-#Function to calculate rental fees based on vehicle type.
+
     def process_payment():
         return f"Processing payment of {self.amount} for {self.get_vhname()}"
 
