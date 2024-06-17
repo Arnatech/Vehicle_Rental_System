@@ -45,7 +45,7 @@ class Vehicle(ABC):
     def set_maintenance(self, maintenance):
         self.__maintenance = maintenance
     
-#Creating subclasses with Vehicle as the parent class of the classes Car, Bike and Truck 
+#Creating subclasses with Vehicle as the parent class of the classes Car, Bike and Truck as child classes
 class Car(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
@@ -62,7 +62,7 @@ class Car(Vehicle):
 class Bike(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
-#Creating polymorphic method for Car    
+#Creating polymorphic method for Bike    
     def rent(self):
         return self.get_rent() * 0.25
     
@@ -75,7 +75,7 @@ class Bike(Vehicle):
 class Truck(Vehicle):
     def __init__(self, vhname, rent, retain, maintenance, days):
         super().__init__(vhname, rent, retain, maintenance, days)
-#Creating polymorphic method for Car        
+#Creating polymorphic method for Truck     
     def rent(self):
         return self.get_rent() * 1.5
     
