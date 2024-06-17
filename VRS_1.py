@@ -112,7 +112,7 @@ class Rental:
         self.days = days
 
     def calculate_rental_fee(self):
-        return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintanence()) * self.rental_period
+        return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintanence()) * self.days
     
 class Payment
 
