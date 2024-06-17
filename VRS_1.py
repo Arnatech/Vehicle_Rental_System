@@ -6,52 +6,121 @@ class Vehicle(ABC):
         self.__rent = rent
         self.__retain = retain
         self.__maintenance = maintenance 
-        
+    
 #Defining the abstruct methods
-    @abstructmethod
+    @abstractmethod
     def rent(self):
         pass
     
-    @abstructmethod
+    @abstractmethod
     def retain_vehicle(self):
         pass
     
-    @abstructmethod
+    @abstractmethod
     def perform_maintenance(self):
         pass
     
-#Creating the getter method
-    def get_price(self):
-        return self.__vhname, self.__maintenance, self.__retain
+#Creating the getter and setter methods for vehicle data
+    def get_vhname(self):
+        return self.__vhname
+
+    def set_vhname(self, vhname):
+        self.__vhname = vhname
+
+    def get_rent(self):
+        return self.__rent
+
+    def set_rent(self, rent):
+        self.__rent = rent
+
+    def get_retain(self):
+        return self.__retain
+
+    def set_retain(self, retain):
+        self.__retain = retain
+
+    def get_maintenance(self):
+        return self.__maintenance
+
+    def set_maintenance(self, maintenance):
+        self.__maintenance = maintenance
     
 #Creating subclasses with Vehicle as the parent class of the classes Car, Bike and Truck 
 class Car(Vehicle):
-    def __init__(self, vhname, rent, retain, maintenance):
+    def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
+#Creating polymorphic method for 
+    def rent(self):
+        return self.get_rent()
+    
+    def retain_vehicle():
+        return self.get_retain()
+    
+    def perform_maintenance():
+        return self.get_maintenance()
         
 class Bike(Vehicle):
-    def __init__(self, vhname, rent, retain, maintenance):
+    def __init__(self, vhname, rent, retain, maintenance,):
         super().__init__(vhname, rent, retain, maintenance)
-    def 
-        if vhname == 'Bike':
-            rent = rent * 0.25
-        else:
-            pass
+        
+    def rent(self):
+        return self.get_rent() * 0.25
+    
+    def retain_vehicle(self):
+        return self.get_retain()
+    
+    def perform_maintenance(self):
+        return self.get_maintenance()
         
 class Truck(Vehicle):
-    def __init__(self, vhname, rent, retain, maintenance):
-        super().__init__(vhname, rent, retain, maintenance)
+    def __init__(self, vhname, rent, retain, maintenance, days):
+        super().__init__(vhname, rent, retain, maintenance, days)
         
-# class Customer
+    def rent(self):
+        return self.get_rent() * 1.5
+    
+    def retain_vehicle(self):
+        return self.get_retain()
+    
+    def perform_maintenance(self):
+        return self.get_maintenance
+        
+class Customer:
+    def __init__(self, cname, tag):
+        self.__cname = cname
+        self.__tag = tag
+        
+#Creating the getters and setters for Customer data   
+    def get_name(self):
+        return self.__name
 
-# class Rental
+    def set_name(self, name):
+        self.__name = name
+
+    def get_customer_id(self):
+        return self.__customer_id
+
+    def set_customer_id(self, customer_id):
+        self.__customer_id = customer_id
+
+    
+        
+    
+class Rental:
+    def __init__(self, customer, vehicle, days):
+        self.customer = customer
+        self.vehicle = vehicle
+        self.days = days
+
+    def calculate_rental_fee(self):
+        return self.vehicle.rent() * self.rental_period
     
 # class Payment
 
 
 
-Adwoaa_car = Car('Bike', 50, 100, 20)
-print(Adwoaa_car.get_price()) 
+Adwoaa_car = 
+print(Adwoaa_car.get_vhname()) 
 
 
 
