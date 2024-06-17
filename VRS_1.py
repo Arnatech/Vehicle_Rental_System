@@ -96,7 +96,7 @@ class Customer:
         return self.__cname
 
     def set_cname(self, name):
-        self.__cname = cname
+        self.__cname = name
 
     def get_tag(self):
         return self.__tag
@@ -123,7 +123,7 @@ class Payment:
 
     def process_payment(self):
         print(f"{self.customer_data.get_cname()} with tag {self.customer_data.get_tag()}")
-        print(f"Your total payment is: ${self.amount} for the {self.rental.vehicle.get_vhname()}")
+        print(f"Your total payment is: ${self.amount} for renting the {self.rental.vehicle.get_vhname()}")
         
 #Creating objects to test the system
 car = [Car("Bugatti", 150, 50 ,12), Car("Toyota camry", 80, 35, 9)]
@@ -136,4 +136,5 @@ customer1 = Customer("Miss Adwoaa", "01A")
 car_rental = Rental(customer1, car[1], 2)
 bike_rental = Rental(customer1, bike[0], 2)
 customer1_carpayment = Payment(customer1, car_rental, car_rental.calculate_rental_fee())
+customer1_carpayment.process_payment()
 
