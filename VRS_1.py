@@ -87,6 +87,7 @@ class Truck(Vehicle):
     
         
 class Customer:
+#Creating private fields for customer data
     def __init__(self, cname, tag):
         self.__cname = cname
         self.__tag = tag      
