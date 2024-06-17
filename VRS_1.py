@@ -84,6 +84,7 @@ class Truck(Vehicle):
     
     def maintenance(self):
         return self.get_maintenance
+    
         
 class Customer:
     def __init__(self, cname, tag):
@@ -102,10 +103,8 @@ class Customer:
 
     def set_tag(self, tag):
         self.__tag = tag
-
-    
         
-    
+          
 class Rental:
     def __init__(self, customer, vehicle, days):
         self.customer = customer
@@ -115,7 +114,7 @@ class Rental:
     def calculate_rental_fee(self):
         return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintanence()) * self.rental_period
     
-# class Payment
+class Payment
 
 
 
