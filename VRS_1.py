@@ -53,14 +53,14 @@ class Car(Vehicle):
     def rent(self):
         return self.get_rent()
     
-    def retain_vehicle():
+    def retain(self):
         return self.get_retain()
     
-    def perform_maintenance():
+    def maintenance(self):
         return self.get_maintenance()
         
 class Bike(Vehicle):
-    def __init__(self, vhname, rent, retain, maintenance,):
+    def __init__(self, vhname, rent, retain, maintenance):
         super().__init__(vhname, rent, retain, maintenance)
 #Creating polymorphic methods for Bike    
     def rent(self):
@@ -83,7 +83,7 @@ class Truck(Vehicle):
         return self.get_retain()
     
     def maintenance(self):
-        return self.get_maintenance
+        return self.get_maintenance()
     
         
 class Customer:
@@ -91,11 +91,11 @@ class Customer:
         self.__cname = cname
         self.__tag = tag      
 #Creating the getters and setters for Customer data   
-    def get_name(self):
+    def get_cname(self):
         return self.__cname
 
-    def set_name(self, name):
-        self.__name = name
+    def set_cname(self, name):
+        self.__cname = cname
 
     def get_tag(self):
         return self.__tag
@@ -111,18 +111,28 @@ class Rental:
         self.days = days
 #Function to calculate rental fees based on vehicle type.
     def calculate_rental_fee(self):
-        return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintanence()) * self.days
+        return (self.vehicle.rent() + self.vehicle.retain() + self.vehicle.maintenance()) * self.days
+  
     
 class Payment:
-    def __init__(self, rental, amount):
+    def __init__(self, customer_data, rental, amount):
+        self.customer_data = customer_data
         self.rental = rental
         self.amount = amount
 
-    def process_payment():
-        return f"Processing payment of {self.amount} for {self.get_vhname()}"
-
+    def process_payment(self):
+        print(f"{self.customer_data.get_cname()} with tag {self.customer_data.get_tag()}")
+        print(f"Your total payment is: ${self.amount} for the {self.rental.vehicle.get_vhname()}")
+        
 #Creating objects to test the system
-car = Car("Bugatti", 150, 50 ,12)
-bike = Bike("BMS", 90, 4, 2)
+car = [Car("Bugatti", 150, 50 ,12), Car("Toyota camry", 80, 35, 9)]
 
+bike = [Bike("BMS", 90, 4, 2), Bike("Bianchi", 95, 6, 9)]
+
+truck = [Truck("MAN", 200, 60, 15), Truck("Ford F-150", 250, 65, 20)]
+
+customer1 = Customer("Miss Adwoaa", "01A")
+car_rental = Rental(customer1, car[1], 2)
+bike_rental = Rental(customer1, bike[0], 2)
+customer1_carpayment = Payment(customer1, car_rental, car_rental.calculate_rental_fee())
 
