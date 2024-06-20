@@ -126,15 +126,16 @@ class Payment:
         print(f"Your total payment is: ${self.amount} for renting the {self.rental.vehicle.get_vhname()}")
         
 #Creating objects to test the system
-car = [Car("Bugatti", 150, 50 ,12), Car("Toyota camry", 80, 35, 9)]
+car = [Car("Bugatti", 150, 50 ,12), Car("Toyota camry", 80, 35, 9)] #creating a list of objects using the Car class/template
 
-bike = [Bike("BMS", 90, 4, 2), Bike("Bianchi", 95, 6, 9)]
+bike = [Bike("BMS", 90, 4, 2), Bike("Bianchi", 95, 6, 9)] #creating a list of objects using the Bike class/template
 
-truck = [Truck("MAN", 200, 60, 15), Truck("Ford F-150", 250, 65, 20)]
+truck = [Truck("MAN", 200, 60, 15), Truck("Ford F-150", 250, 65, 20)] #creating a list of objects using the Truck class/template
 
-customer1 = Customer("Miss Adwoaa", "01A")
-car_rental = Rental(customer1, car[1], 2)
-bike_rental = Rental(customer1, bike[0], 2)
-customer1_carpayment = Payment(customer1, car_rental, car_rental.calculate_rental_fee())
-customer1_carpayment.process_payment()
+#Testing for customer1
+customer = Customer("Miss Adwoaa", "01A") #creating an object using the Customer class/ template
 
+car_rental = Rental(customer, car[1], 2) #creating an object using the Rental class/template
+
+customer_carpayment = Payment(customer, car_rental, car_rental.calculate_rental_fee()) #creating an object using the Payment class/template 
+customer_carpayment.process_payment() #calling a method in the Payment class            
